@@ -20,8 +20,8 @@ Di Supabase: **Project Settings → API**. Salin:
 
 Masukkan ke `js/config.js`:
 ```js
-const SUPABASE_URL = 'https://PROJECT.supabase.co';
-const SUPABASE_ANON_KEY = 'YOUR_ANON_KEY';
+const SUPABASE_URL = 'https://ojtvsmhyrslvotfrrzfo.supabase.co';
+const SUPABASE_ANON_KEY = 'sb_publishable_FuZVye4YSGAjxbfTu-FQMw_rUOktrNj';
 ```
 Jangan pernah memasukkan `service_role` key ke frontend.
 
@@ -49,3 +49,11 @@ Klik **Tambah Materi**. Isi judul, kategori, tipe, kelas, dan link. Setelah disi
 RLS sudah diaktifkan dalam SQL. Public hanya membaca materi published. Operasi tambah/edit/hapus memerlukan login Supabase.
 
 Untuk produksi dengan beberapa level pengguna, sebaiknya tambahkan tabel role/profile sehingga hanya user admin/editor tertentu yang boleh melakukan CRUD.
+
+
+## Konfigurasi project baru (14 Nov 2026)
+Project Library: `ojtvsmhyrslvotfrrzfo` (terpisah dari SISJAR).
+File `js/config.js` sudah diarahkan ke project baru.
+Jalankan `supabase.sql` pada SQL Editor project Library ini saja.
+Setelah membuat user di Authentication > Users, tambahkan UUID-nya ke `public.admin_users` sesuai petunjuk di akhir SQL.
+JANGAN jalankan SQL ini pada project SISJAR.
