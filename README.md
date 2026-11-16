@@ -57,3 +57,12 @@ File `js/config.js` sudah diarahkan ke project baru.
 Jalankan `supabase.sql` pada SQL Editor project Library ini saja.
 Setelah membuat user di Authentication > Users, tambahkan UUID-nya ke `public.admin_users` sesuai petunjuk di akhir SQL.
 JANGAN jalankan SQL ini pada project SISJAR.
+
+
+## Statistik kunjungan materi
+Jalankan blok SQL `STATISTIK KUNJUNGAN MATERI` pada bagian akhir `supabase.sql` di project Supabase Library. Setiap klik tombol Buka Materi dicatat sebagai satu kunjungan. ID pengunjung anonim dibuat di browser dan disimpan di localStorage; statistik unik bersifat perkiraan berbasis browser/perangkat, bukan identitas orang yang terverifikasi.
+
+
+## Statistik kunjungan di halaman publik
+
+Untuk menampilkan jumlah kunjungan pada setiap kartu materi di halaman depan, jalankan seluruh file `statistics.sql` di SQL Editor project Supabase WIDYA PRATAMA CLASS. File tersebut menambahkan RPC `get_public_material_view_counts()` yang hanya mengembalikan jumlah kunjungan per materi terbit, tanpa membocorkan visitor_id atau detail kunjungan. Setelah itu deploy ulang folder project ke GitHub Pages.
